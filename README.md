@@ -96,6 +96,7 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
 - [ ] **Firefox**
 - [ ] **Google Chrome**
 - [ ] **Brave**
+  - [ ] **はてなブックマーク (ブラウザ拡張機能)**
 
 ### コミュニケーション
 - [ ] **Discord**
@@ -105,6 +106,10 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
 - [ ] **Thunderbird**
 
 ### 開発ツール
+- [ ] **Git for Windows**
+  - [公式サイト](https://gitforwindows.org/)からダウンロードしてインストール。
+- [ ] **Visual Studio Community 2022**
+  - [公式サイト](https://visualstudio.microsoft.com/ja/vs/community/)からダウンロードしてインストール。
 - [ ] **Docker Desktop**
   - [公式サイト](https://www.docker.com/products/docker-desktop/)からダウンロードしてインストール。
   - インストール時、「Use the WSL 2 based engine」にチェックが入っていることを確認。
@@ -123,6 +128,8 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
   - AIコーディングアシスタント。
 
 ### ユーティリティ
+- [ ] **DeepL**
+  - [公式サイト](https://www.deepl.com/ja/windows-app/)からダウンロードしてインストール。
 - [ ] **Google ドライブ**
 - [ ] **KeePassXC**
 - [ ] **7-Zip**
