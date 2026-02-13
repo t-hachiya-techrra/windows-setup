@@ -115,6 +115,8 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
   - インストール時、「Use the WSL 2 based engine」にチェックが入っていることを確認。
 - [ ] **Android Studio**
   - [公式サイト](https://developer.android.com/studio)からダウンロードしてインストール。
+- [x] **WinMerge**
+  - [公式サイト](https://winmerge.org/)からダウンロードしてインストール。
 - [ ] **Python Install Manager**
   - Microsoft Storeまたはwingetでインストール。
   - `winget install Python.InstallManager`
