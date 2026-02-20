@@ -134,6 +134,8 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
 ### ユーティリティ
 - [ ] **DeepL**
   - [公式サイト](https://www.deepl.com/ja/windows-app/)からダウンロードしてインストール。
+- [ ] **Acrobat Reader**
+  - [公式サイト](https://get.adobe.com/jp/reader/)からダウンロードしてインストール。
 - [ ] **Google ドライブ**
 - [ ] **KeePassXC**
 - [ ] **7-Zip**
