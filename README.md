@@ -108,16 +108,21 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
 ### 開発ツール
 - [ ] **Git for Windows**
   - [公式サイト](https://gitforwindows.org/)からダウンロードしてインストール。
+- [ ] **AWS CLI**
+  - [公式サイト](https://aws.amazon.com/jp/cli/)からダウンロードしてインストール。
 - [ ] **Visual Studio Community 2022**
   - [公式サイト](https://visualstudio.microsoft.com/ja/vs/community/)からダウンロードしてインストール。
+- [ ] **WinSCP**
+  - [公式サイト](https://winscp.net/)からダウンロードしてインストール。
 - [ ] **Docker Desktop**
+
   - [公式サイト](https://www.docker.com/products/docker-desktop/)からダウンロードしてインストール。
   - インストール時、「Use the WSL 2 based engine」にチェックが入っていることを確認。
 - [ ] **Android Studio**
   - [公式サイト](https://developer.android.com/studio)からダウンロードしてインストール。
   - **adbコマンドへのPATHを通す**
     - `%LOCALAPPDATA%\Android\Sdk\platform-tools` をシステム環境変数（またはユーザー環境変数）の `Path` に追加。
-- [x] **WinMerge**
+- [ ] **WinMerge**
   - [公式サイト](https://winmerge.org/)からダウンロードしてインストール。
 - [ ] **Python Install Manager**
   - Microsoft Storeまたはwingetでインストール。
@@ -190,6 +195,34 @@ WSL2のメモリ使用量やディスクサイズを事前に制限・設定し�
    ```powershell
    winget install --id Microsoft.PowerShell --source winget
    ```
+#### Windows Terminal に Git Bash プロファイルを追加
+1. Windows Terminal の設定（Ctrl + ,）を開く。
+2. 「新しいプロファイルを追加」→「空のプロファイル」を表示。
+3. 以下の項目を設定して保存：
+   - **名前**: Git Bash
+   - **コマンドライン**: `C:\Program Files\Git\bin\bash.exe --login -i`
+   - **アイコン**: `C:\Program Files\Git\mingw64\share\git\git-for-windows.ico`
+   - **開始ディレクトリ**: `%USERPROFILE%`
+
+4. **Git Bash のカスタマイズ (.bashrc)**:
+   - 必要に応じて `~/.bashrc` に以下の設定を追記します。
+
+   **日本語環境の設定**:
+     ```bash
+     export LANG=ja_JP.UTF-8
+     export LC_ALL=ja_JP.UTF-8
+     ```
+
+   **便利関数の追加（ジャンクション作成）**:
+     ```bash
+     # ジャンクション作成
+     mkjunction() {
+         cmd //c mklink //J "$(cygpath -w "$1")" "$(cygpath -w "$2")"
+     }
+     ```
+
+> [!NOTE]
+> 初回起動時に `WARNING: Found ~/.bashrc but no ~/.bash_profile...` という警告が出ることがありますが、これは Git Bash が自動的に `.bash_profile` を作成して解決してくれるため、そのまま進めて問題ありません。
 
 ## 5. その他 (Miscellaneous)
 
