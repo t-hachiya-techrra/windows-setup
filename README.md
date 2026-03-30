@@ -114,6 +114,16 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
   - [公式サイト](https://visualstudio.microsoft.com/ja/vs/community/)からダウンロードしてインストール。
 - [ ] **WinSCP**
   - [公式サイト](https://winscp.net/)からダウンロードしてインストール。
+- [ ] **PuTTY**
+  - [公式サイト](https://www.putty.org/)からダウンロードしてインストール。
+  - **Pageant の自動起動設定**
+    - `pageant.exe` のショートカットをスタートアップ（`shell:startup`）に作成。
+    - ショートカットのプロパティで、リンク先の末尾に `--openssh-config %USERPROFILE%\.ssh\pageant.conf` を追記して、OpenSSH形式の構成をPageantで共有可能にする。
+  - **SSH 設定の更新 (`~/.ssh/config`)**
+    - `%USERPROFILE%\.ssh\config`（または `~/.ssh/config`）の先頭付近に以下を追記して、Pageant 用の設定を読み込むようにする。
+      ```ssh
+      Include pageant.conf
+      ```
 - [ ] **Docker Desktop**
 
   - [公式サイト](https://www.docker.com/products/docker-desktop/)からダウンロードしてインストール。
@@ -131,6 +141,8 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
   - [公式サイト](https://sakura-editor.github.io/)からダウンロードしてインストール。
 - [ ] **Fork**
   - [公式サイト](https://git-fork.com/)からダウンロードしてインストール。
+  - **Git 実行ファイルの変更**
+    - 「File」→「Preferences」→「Git」から、Git Instance を「Git for Windows」に変更する。
 - [ ] **Cursor**
   - [公式サイト](https://www.cursor.com/)からダウンロードしてインストール。
 - [ ] **Antigravity**
@@ -143,6 +155,9 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
   - [公式サイト](https://get.adobe.com/jp/reader/)からダウンロードしてインストール。
 - [ ] **Google ドライブ**
 - [ ] **KeePassXC**
+  - **SSH Agent 統合の設定**
+    - 「設定」→「SSH エージェント」から「SSH エージェントを有効にする」にチェックを入れる。
+    - Windows の場合は「Pageant を使用する」を選択する。
 - [ ] **7-Zip**
 - [ ] **Voicemeeter Banana**
   - [公式サイト](https://vb-audio.com/Voicemeeter/banana.htm)からダウンロードしてインストール。
@@ -153,7 +168,10 @@ US配列キーボードを使用する場合や、Linux/Macと操作感を合わ
 ## 4. 開発環境の詳細設定 (Dev Environment)
 
 ### Git 設定
-- [ ] 
+- [ ] **環境変数 `GIT_SSH` の設定**
+  - Git が使用する SSH クライアントを Windows 標準のものに固定するため、システム（またはユーザー）環境変数に以下を設定する。
+  - **変数名**: `GIT_SSH`
+  - **変数値**: `C:\Windows\System32\OpenSSH\ssh.exe`
 
 ### VS Code 設定
 - [ ] 
@@ -211,6 +229,11 @@ WSL2のメモリ使用量やディスクサイズを事前に制限・設定し�
      ```bash
      export LANG=ja_JP.UTF-8
      export LC_ALL=ja_JP.UTF-8
+     ```
+
+   **Windows 標準の SSH を優先する**:
+     ```bash
+     export PATH="/c/Windows/System32/OpenSSH:${PATH}"
      ```
 
    **便利関数の追加（ジャンクション作成）**:
